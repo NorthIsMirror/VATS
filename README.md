@@ -1,4 +1,4 @@
-# Valgrind Automatic Tests Suite (VATS)
+# Valgrind Automatic Test Suite (VATS)
 
 Runs sequence of tests, preceded by `valgrind` call, with arguments taken from file `vtest.conf`
 (i.e. valgrind-test.conf). The arguments are dynamic because the `vtest.conf` entry can look like

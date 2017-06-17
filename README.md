@@ -29,6 +29,10 @@ errors2+=( "* / zsh_main / setupvals / gettimeofday / *" )
 
 and is placed in `__error1.def` or other such file with index.
 
+## Asciicast
+
+[![asciicast](https://asciinema.org/a/125035.png)](https://asciinema.org/a/125035)
+
 ## Integrating With Project
 
 `configure.ac` is provided, user needs to take crucial parts from it and add to its own `configure.ac`.

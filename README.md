@@ -6,7 +6,7 @@ this:
 
 ```SystemVerilog
 # Arguments passed to $test_bin, evaluated at use
-test_bin_args='"${(z@)$(<$file)}"'
+test_bin_args='"${(Q@)${(z@)$(<$file)}}"'"'
 ```
 
 The variable `$file` is set to current test-file for each test-run. Example test file:
@@ -16,8 +16,11 @@ ftps://github.com/zdharma/zconvey.git -r development -p Src/params.c
 ```
 
 So `$(<$file)` will read contents of the test-file, and Zsh-flag `(z@)` will split them into
-array, passed to `$test_bin` as arguments. `(z)` flag supports quoting, so you can pass
+array, `(Q@)` will clear any quotation text (needed for `(z)` flag, now harmful) from the elements
+that are then passed to the `$test_bin` as arguments. `(z)` flag supports quoting, so you can pass
 arguments like `'$HOME/test directory'`, i.e. with spaces.
+
+So in short: `$test_bin` – the binary to test with valgrind, `$test_bin_args` – the arguments passed to the tested binary.
 
 ## Error Definitions
 
